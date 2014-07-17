@@ -1,7 +1,7 @@
 ﻿"""
 Simulates drainage in order to analyse a mesh for local pooling of rain water and snow.
 -
-Name: MeshDrainageAnalysis
+Name: MeshDrainage
 Updated: 140621
 Author: Anders Holden Deleuran (CITA/KADK)
 Copyright: Creative Commons - Attribution 4.0 International
