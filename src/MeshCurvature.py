@@ -8,7 +8,7 @@ positive curvature a positive value.
 Name: MeshCurvature
 Updated: 140818
 Author: Anders Holden Deleuran (CITA/KADK)
-Copyright: Author must be contacted and credited with any use or implementation of this code.
+Copyright: Creative Commons - Attribution 4.0 International
 Contact: adel@kadk.dk
 
     Args:
