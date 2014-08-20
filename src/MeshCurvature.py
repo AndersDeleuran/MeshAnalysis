@@ -1,20 +1,21 @@
 ﻿"""
-Analyse mesh curvature. Curvature is defined here as the angle between a vertex 
-normal and the vector from this vertex to its neighbours. Zero curvature is thus 
-equal to 90 degrees. However to evaluate positive and negative curvatures 90 is 
-subtracted from this value. Meaning that negative curvature will be a negative 
-value and positive curvature a positive value.
+Analyse mesh curvature. Curvature is defined as the angle between a vertex normal
+and the vector from this vertex to its neighbours. Zero curvature is thus equal 
+to 90 degrees. However to evaluate positive and negative curvatures 90 is subtracted
+from this value. Meaning that negative curvature will be a negative value and
+positive curvature a positive value.
 -
 Name: MeshCurvature
-Updated: 140614
+Updated: 140818
 Author: Anders Holden Deleuran (CITA/KADK)
-Copyright: Creative Commons - Attribution 4.0 International
+Copyright: Author must be contacted and credited with any use or implementation of this code.
 Contact: adel@kadk.dk
 
     Args:
         Toggle: Activates the component.
         Mesh: The mesh to analyse.
         Mode: The curvature mode to calculate ("min","max" or "mean").
+        Angle: The angle in degrees at which the mesh is unwelded.
         NegativeOff: If True negative curvature is treated as if positive.
     Returns:
         Mesh: A mesh colored by its curvature values.
@@ -31,13 +32,17 @@ import math
 
 
 # Set component name/nick
-ghenv.Component.Name = "MeshCurvature"
+ghenv.Component.Name = "MeshCurvatureAnalysis"
 ghenv.Component.NickName = "MeshCurvature"
 
 def meshCurvature(mesh,mode,negativeOff):
     
     """ Calculate the curvature of a mesh using vertex normal angle 
     from each vertex to its neighbours """
+    
+    # Calculate mesh normals
+    mesh.FaceNormals.ComputeFaceNormals()
+    mesh.Normals.ComputeNormals()
     
     # Output list
     curvature = []
@@ -104,7 +109,7 @@ def remapValues(values,targetMin,targetMax):
         
     # Else return targetMax for each value
     else:
-        return [targetMax]*len(values)
+        return [targetMin]*len(values)
 
 def mapValueListAsColors(values):
     
@@ -121,19 +126,24 @@ def mapValueListAsColors(values):
     return colors
 
 def colorMesh(mesh,colors):
-    
     """ Color mesh vertices by list of colors """
-    
     for i,c in enumerate(colors):
         mesh.VertexColors.SetColor(i,c)
 
-# Function calls and GH output
+# Calls and GH output
 if Toggle:
     if Mesh:
+        
+        # Unweld the mesh at sharp angles
+        Mesh.Unweld(math.radians(Angle),True)
+        
+        # Calculate curvature, sorted values, sum etc,
         Curvature = meshCurvature(Mesh,Mode,NegativeOff)
         CurvatureSorted = sorted(Curvature)
         CurvatureSum = round(sum(Curvature),2)
         CurvatureBounds = (round(min(Curvature),2)),(round(max(Curvature),2))
+        
+        # Calculate colors and color mesh
         Colors = mapValueListAsColors(Curvature)
         CMesh = Mesh
         colorMesh(CMesh,Colors)
