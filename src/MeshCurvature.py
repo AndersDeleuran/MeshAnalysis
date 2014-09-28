@@ -1,7 +1,7 @@
 ﻿"""
-Analyse mesh curvature. Curvature is defined as the angle between a vertex normal
-and the vector from this vertex to its neighbours. Zero curvature is thus equal 
-to 90 degrees. However to evaluate positive and negative curvatures 90 is subtracted
+Analyse mesh curvature. Curvature is defined here as the angle between a vertex normal
+and the vector from this vertex to its neighbours. Zero curvature is thus equal to
+90 degrees. However to evaluate positive and negative curvatures 90 is subtracted
 from this value. Meaning that negative curvature will be a negative value and
 positive curvature a positive value.
 -
