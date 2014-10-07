@@ -9,6 +9,7 @@ Name: MeshCurvature
 Updated: 140818
 Author: Anders Holden Deleuran (CITA/KADK)
 Copyright: Creative Commons - Attribution 4.0 International
+GitHub: www.github.com/AndersDeleuran/MeshAnalysis
 Contact: adel@kadk.dk
 
     Args:
