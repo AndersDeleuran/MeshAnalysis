@@ -10,6 +10,11 @@ Author: Anders Holden Deleuran (CITA/KADK)
 Copyright: Creative Commons - Attribution 4.0 International
 GitHub: www.github.com/AndersDeleuran/MeshAnalysis
 Contact: adel@kadk.dk
+
+    Args:
+        Mesh: The mesh to analyse.
+    Returns:
+        BurnFronts: List of grassfire burn fronts as meshes.
 """
 
 import Rhino as rc
