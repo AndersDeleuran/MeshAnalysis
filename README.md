@@ -9,4 +9,4 @@ The Python components are in the Grasshopper file in the "examples" folder above
 
 Video example: http://vimeo.com/100984691
 
-![alt tag](https://raw.githubusercontent.com/AndersDeleuran/MeshAnalysis/master/examples/141008_MeshAnalysis_Example.png)
+![alt tag](https://raw.githubusercontent.com/AndersDeleuran/MeshAnalysis/master/examples/141031_MeshAnalysis_Example.png)
