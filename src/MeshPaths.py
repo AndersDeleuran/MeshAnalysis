@@ -1,5 +1,5 @@
 ﻿""" 
-Calculate shortest paths on a mesh. Uses the NetworkX Python module:
+Calculate shortest paths on a mesh. Uses the NetworkX 1.5 Python module:
 Download here:
 http://networkx.lanl.gov/download/networkx/
 Read about shortest path algorithms here:
