@@ -10,7 +10,7 @@ Geometric drainage simulation model for analysing a mesh for pooling of rain wat
     Outputs:
         DrainagePaths: Polylines through the paths of each particle {list,polyline}
     Remarks:
-        Author: Anders Holden Deleuran (BIG Compute/Ideas/Tech)
+        Author: Anders Holden Deleuran
         License:
         Version: 190311
 """
