@@ -1,5 +1,5 @@
 """
-Geometric drainage simualtion model for analysing a mesh for pooling of rain water.
+Geometric drainage simulation model for analysing a mesh for pooling of rain water.
     Inputs:
         Mesh: The mesh to analyse {item,mesh}
         ParticleCount: Amount of particles randomly picked from Mesh vertices {item,int}
